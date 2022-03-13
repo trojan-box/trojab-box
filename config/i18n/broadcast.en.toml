@@ -1,0 +1,3 @@
+WIN_CONGRATULATION = "Congratulation to {{.Name}} for getting {{.Bonus}} ARES!"
+WITHDRAW_BONUS_SUCCESSFUL_MESSAGE = "The {{.Bonus}} ARES reward you have extracted has been in your wallet."
+SHARE_BONUS_SUCCESSFUL_MESSAGE = "The content you shared at {{.Channel}} credited {{.Bonus}} ARES in your account."

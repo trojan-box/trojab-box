@@ -1,0 +1,3 @@
+WIN_CONGRATULATION = "祝贺 {{.Name}} 获得了 {{.Bonus}} ARES!"
+WITHDRAW_BONUS_SUCCESSFUL_MESSAGE = "你提取的{{.Bonus}}ARES奖励，已经存入你的钱包"
+SHARE_BONUS_SUCCESSFUL_MESSAGE = "你分享在{{.Channel}}的内容获得了{{.Bonus}}ARES，已经存入你的账户"

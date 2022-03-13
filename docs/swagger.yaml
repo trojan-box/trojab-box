@@ -1,0 +1,1515 @@
+definitions:
+  vo.AddSocialShareReq:
+    properties:
+      channel:
+        type: integer
+      content:
+        type: string
+      link:
+        type: string
+      share_type:
+        type: integer
+    type: object
+  vo.BonusHistory:
+    properties:
+      address:
+        type: string
+      associate:
+        type: integer
+      bonus:
+        type: integer
+      create_time:
+        type: integer
+      state:
+        type: integer
+      type:
+        type: integer
+    type: object
+  vo.BonusPoolInfo:
+    properties:
+      total:
+        type: integer
+    type: object
+  vo.BonusWithdraw:
+    properties:
+      address:
+        type: string
+      apply_time:
+        type: integer
+      bonus:
+        type: integer
+      gas:
+        type: integer
+      id:
+        type: integer
+      nick_name:
+        type: string
+      state:
+        type: integer
+      txhash:
+        type: string
+    type: object
+  vo.Config:
+    properties:
+      debug:
+        type: boolean
+      game:
+        $ref: '#/definitions/vo.GameConfig'
+      manager_address:
+        items:
+          type: string
+        type: array
+      mode:
+        type: string
+      white_list:
+        items:
+          type: string
+        type: array
+    type: object
+  vo.DailyStats:
+    properties:
+      annual_yield_rate:
+        type: number
+      day:
+        type: string
+      game_reward_amount:
+        type: integer
+      new_address:
+        type: integer
+      opened_big_reward:
+        type: integer
+      part_in_address:
+        type: integer
+      part_in_count:
+        type: integer
+      reward_amount:
+        type: integer
+      share_reward_amount:
+        type: integer
+      single_reward_max:
+        type: integer
+      single_reward_min:
+        type: integer
+      staking_amount:
+        type: integer
+      unopened_big_reward:
+        type: integer
+      withdraw_amount:
+        type: integer
+    type: object
+  vo.GameConfig:
+    properties:
+      end_hour:
+        type: integer
+      min_balance:
+        type: integer
+      min_withdraw:
+        type: integer
+      only_white_list:
+        type: boolean
+      start_hour:
+        type: integer
+      verify_wallet_balance:
+        type: boolean
+    type: object
+  vo.GameHistories:
+    properties:
+      address:
+        type: string
+      bonus:
+        type: integer
+      cards:
+        items:
+          type: integer
+        type: array
+      cards_bonus:
+        items:
+          type: integer
+        type: array
+      chosen_index:
+        type: integer
+      id:
+        type: integer
+      nick_name:
+        type: string
+      play_time:
+        type: integer
+      session:
+        type: string
+    type: object
+  vo.GameHistory:
+    properties:
+      address:
+        type: string
+      bonus:
+        type: integer
+      cards:
+        items:
+          type: integer
+        type: array
+      cards_bonus:
+        items:
+          type: integer
+        type: array
+      chosen_index:
+        type: integer
+      id:
+        type: integer
+      play_time:
+        type: integer
+      session:
+        type: string
+    type: object
+  vo.GameSession:
+    properties:
+      address:
+        type: string
+      bonus:
+        type: integer
+      cards:
+        items:
+          type: integer
+        type: array
+      cards_bonus:
+        items:
+          type: integer
+        type: array
+      chosen_index:
+        type: integer
+      id:
+        type: integer
+      play_time:
+        type: integer
+      session:
+        type: string
+    type: object
+  vo.LeaderboardResp:
+    properties:
+      address:
+        type: string
+      avatar:
+        type: integer
+      nick_name:
+        type: string
+      reward:
+        type: integer
+    type: object
+  vo.ModifyUserProfileReq:
+    properties:
+      avatar:
+        type: integer
+      nick_name:
+        type: string
+    type: object
+  vo.Pagination:
+    properties:
+      curPage:
+        type: integer
+      items: {}
+      totalNum:
+        type: integer
+    type: object
+  vo.PlayGameReq:
+    properties:
+      address:
+        type: string
+      cards:
+        items:
+          type: integer
+        type: array
+      chosen:
+        type: integer
+      nonce:
+        type: string
+      signed_msg:
+        type: string
+      timestamp:
+        type: string
+    type: object
+  vo.PlayGameResp:
+    properties:
+      bonus:
+        type: integer
+      id:
+        type: integer
+      session:
+        type: string
+    type: object
+  vo.ProcessSocialShareReq:
+    properties:
+      accept:
+        type: boolean
+      auditor:
+        type: string
+      bonus:
+        type: integer
+      id:
+        type: integer
+      reply:
+        type: string
+    type: object
+  vo.ProcessWithdrawBonusReq:
+    properties:
+      id:
+        type: integer
+      txhash:
+        type: string
+    type: object
+  vo.ReadMessage:
+    properties:
+      id:
+        type: integer
+    type: object
+  vo.Response:
+    properties:
+      code:
+        type: integer
+      data: {}
+      message:
+        type: string
+    type: object
+  vo.SocialShare:
+    properties:
+      address:
+        type: string
+      apply_time:
+        type: integer
+      auditor:
+        type: string
+      auditor_address:
+        type: string
+      bonus:
+        type: integer
+      channel:
+        type: integer
+      content:
+        type: string
+      id:
+        type: integer
+      link:
+        type: string
+      nick_name:
+        type: string
+      reply:
+        type: string
+      share_type:
+        type: integer
+      state:
+        type: integer
+    type: object
+  vo.TotalStats:
+    properties:
+      avg_apr:
+        type: number
+      game_reward_amount:
+        type: integer
+      part_in_address:
+        type: integer
+      part_in_count:
+        type: integer
+      reward_amount:
+        type: integer
+      share_reward_amount:
+        type: integer
+      signed_address:
+        type: integer
+      staking_amount:
+        type: integer
+      withdraw_amount:
+        type: integer
+    type: object
+  vo.UserAuthReq:
+    properties:
+      address:
+        type: string
+      nonce:
+        type: string
+      signed_msg:
+        type: string
+      timestamp:
+        type: string
+    type: object
+  vo.UserBonus:
+    properties:
+      address:
+        type: string
+      balance:
+        type: integer
+      freeze:
+        type: integer
+      today_win:
+        type: integer
+      total_win:
+        type: integer
+    type: object
+  vo.UserMessage:
+    properties:
+      content:
+        type: string
+      id:
+        type: integer
+      state:
+        type: integer
+    type: object
+  vo.UserProfile:
+    properties:
+      address:
+        type: string
+      avatar:
+        type: integer
+      nick_name:
+        type: string
+    type: object
+  vo.UserYieldHourlyStats:
+    properties:
+      annually_rate:
+        type: number
+      balance:
+        type: integer
+      reward:
+        type: integer
+      time:
+        type: string
+    type: object
+  vo.WithdrawBonusApplyReq:
+    properties:
+      address:
+        type: string
+      bonus:
+        type: integer
+      nonce:
+        type: string
+      signed_msg:
+        type: string
+      timestamp:
+        type: string
+    type: object
+info:
+  contact: {}
+paths:
+  /app/config:
+    get:
+      consumes:
+      - application/json
+      description: get app config info
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/vo.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/vo.Config'
+              type: object
+      summary: GetAppConfig
+      tags:
+      - app
+  /bonus/histories:
+    get:
+      consumes:
+      - application/json
+      description: get user bonus history
+      parameters:
+      - description: accessToken
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: address
+        in: query
+        name: address
+        required: true
+        type: string
+      - description: page start from 0,default 0
+        in: query
+        name: page
+        type: integer
+      - description: size default 20
+        in: query
+        name: size
+        type: integer
+      - description: 1：win 2：withdraw
+        in: query
+        name: type
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/vo.Response'
+            - properties:
+                data:
+                  allOf:
+                  - $ref: '#/definitions/vo.Pagination'
+                  - properties:
+                      items:
+                        items:
+                          $ref: '#/definitions/vo.BonusHistory'
+                        type: array
+                    type: object
+              type: object
+      summary: GetUserBonusHistory
+      tags:
+      - bonus
+  /bonus/my:
+    get:
+      consumes:
+      - application/json
+      description: get my bonus
+      parameters:
+      - description: accessToken
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/vo.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/vo.UserBonus'
+              type: object
+      summary: GetMyBonus
+      tags:
+      - bonus
+  /bonus/my/history:
+    get:
+      consumes:
+      - application/json
+      description: get my bonus history
+      parameters:
+      - description: accessToken
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: page start from 0,default 0
+        in: query
+        name: page
+        type: integer
+      - description: size default 20
+        in: query
+        name: size
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/vo.Response'
+            - properties:
+                data:
+                  allOf:
+                  - $ref: '#/definitions/vo.Pagination'
+                  - properties:
+                      items:
+                        items:
+                          $ref: '#/definitions/vo.BonusHistory'
+                        type: array
+                    type: object
+              type: object
+      summary: GetMyBonusHistory
+      tags:
+      - bonus
+  /bonus/withdraw/apply:
+    post:
+      consumes:
+      - application/json
+      description: apply to withdraw bonus
+      parameters:
+      - description: req
+        in: body
+        name: .
+        schema:
+          $ref: '#/definitions/vo.WithdrawBonusApplyReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/vo.Response'
+            - properties:
+                data:
+                  type: string
+              type: object
+      summary: WithdrawBonusApply
+      tags:
+      - bonus
+  /bonus_pool/info:
+    get:
+      consumes:
+      - application/json
+      description: get bonus pool info
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/vo.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/vo.BonusPoolInfo'
+              type: object
+      summary: GetBonusPoolInfo
+      tags:
+      - bonus_pool
+  /broadcast:
+    get:
+      consumes:
+      - application/json
+      description: get broadcasts
+      parameters:
+      - description: language
+        in: header
+        name: lang
+        required: true
+        type: string
+      - description: page start from 0,default 0
+        in: query
+        name: page
+        type: integer
+      - description: size default 20
+        in: query
+        name: size
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/vo.Response'
+            - properties:
+                data:
+                  allOf:
+                  - $ref: '#/definitions/vo.Pagination'
+                  - properties:
+                      items:
+                        items:
+                          type: string
+                        type: array
+                    type: object
+              type: object
+      summary: GetBroadcasts
+      tags:
+      - broadcast
+  /broadcast/latest:
+    get:
+      consumes:
+      - application/json
+      description: get the latest broadcast
+      parameters:
+      - description: language
+        in: header
+        name: lang
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/vo.Response'
+            - properties:
+                data:
+                  type: string
+              type: object
+      summary: GetLatestBroadcast
+      tags:
+      - broadcast
+  /file/upload:
+    post:
+      consumes:
+      - multipart/form-data
+      description: uploadFile
+      parameters:
+      - description: accessToken
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: file
+        in: formData
+        name: file
+        required: true
+        type: file
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/vo.Response'
+            - properties:
+                data:
+                  type: string
+              type: object
+      summary: UploadFile
+      tags:
+      - file
+  /game/{session}:
+    get:
+      consumes:
+      - application/json
+      description: get played game detail
+      parameters:
+      - description: accessToken
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: session str
+        in: path
+        name: session
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/vo.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/vo.GameSession'
+              type: object
+      summary: GetGameDetail
+      tags:
+      - game
+  /game/histories:
+    get:
+      consumes:
+      - application/json
+      description: get all user played game history
+      parameters:
+      - description: filter address ,if empty will query all address
+        in: query
+        name: address
+        type: string
+      - description: page start from 0,default 0
+        in: query
+        name: page
+        type: integer
+      - description: size default 20
+        in: query
+        name: size
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/vo.Response'
+            - properties:
+                data:
+                  allOf:
+                  - $ref: '#/definitions/vo.Pagination'
+                  - properties:
+                      items:
+                        items:
+                          $ref: '#/definitions/vo.GameHistories'
+                        type: array
+                    type: object
+              type: object
+      summary: GetGameHistory
+      tags:
+      - game
+  /game/id/{id}:
+    get:
+      consumes:
+      - application/json
+      description: get played game detail by id
+      parameters:
+      - description: accessToken
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: session id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/vo.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/vo.GameSession'
+              type: object
+      summary: GetGameDetailById
+      tags:
+      - game
+  /game/my/history:
+    get:
+      consumes:
+      - application/json
+      description: get my played game history
+      parameters:
+      - description: accessToken
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: page start from 0,default 0
+        in: query
+        name: page
+        type: integer
+      - description: size default 20
+        in: query
+        name: size
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/vo.Response'
+            - properties:
+                data:
+                  allOf:
+                  - $ref: '#/definitions/vo.Pagination'
+                  - properties:
+                      items:
+                        items:
+                          $ref: '#/definitions/vo.GameHistory'
+                        type: array
+                    type: object
+              type: object
+      summary: GetMyGameHistory
+      tags:
+      - game
+  /game/play:
+    post:
+      consumes:
+      - application/json
+      description: play game
+      parameters:
+      - description: req
+        in: body
+        name: .
+        schema:
+          $ref: '#/definitions/vo.PlayGameReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/vo.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/vo.PlayGameResp'
+              type: object
+      summary: PlayGame
+      tags:
+      - game
+  /gas/cal:
+    get:
+      consumes:
+      - application/json
+      description: calculate gas to ares
+      parameters:
+      - description: gas
+        in: query
+        name: gas
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/vo.Response'
+            - properties:
+                data:
+                  type: string
+              type: object
+      summary: CalGasFee
+      tags:
+      - gas
+  /leaderboard:
+    get:
+      consumes:
+      - application/json
+      description: get leaderboard
+      parameters:
+      - description: 'type: 1: newStar 2:season champion'
+        in: query
+        name: type
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/vo.Response'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/vo.LeaderboardResp'
+                  type: array
+              type: object
+      summary: GetLeaderboard
+      tags:
+      - leaderboard
+  /message/my:
+    get:
+      consumes:
+      - application/json
+      description: get my message
+      parameters:
+      - description: language
+        in: header
+        name: lang
+        required: true
+        type: string
+      - description: accessToken
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: state 1：unRead 2:read
+        in: query
+        name: state
+        type: integer
+      - description: page start from 0,default 0
+        in: query
+        name: page
+        type: integer
+      - description: size default 20
+        in: query
+        name: size
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/vo.Response'
+            - properties:
+                data:
+                  allOf:
+                  - $ref: '#/definitions/vo.Pagination'
+                  - properties:
+                      items:
+                        items:
+                          $ref: '#/definitions/vo.UserMessage'
+                        type: array
+                    type: object
+              type: object
+      summary: GetMyMessages
+      tags:
+      - message
+  /message/read:
+    post:
+      consumes:
+      - application/json
+      description: make message read
+      parameters:
+      - description: accessToken
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: req
+        in: body
+        name: .
+        schema:
+          $ref: '#/definitions/vo.ReadMessage'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/vo.Response'
+            - properties:
+                data:
+                  type: string
+              type: object
+      summary: ReadMessage
+      tags:
+      - message
+  /nonce:
+    get:
+      consumes:
+      - application/json
+      description: get user nonce by address
+      parameters:
+      - description: user address
+        in: query
+        name: address
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/vo.Response'
+            - properties:
+                data:
+                  type: string
+              type: object
+      summary: get nonce
+      tags:
+      - nonce
+  /share:
+    get:
+      consumes:
+      - application/json
+      description: get  bonus withdraw ,can filter by address and type
+      parameters:
+      - description: filter address,if empty will return all user
+        in: query
+        name: address
+        type: string
+      - description: filter auditor_address
+        in: query
+        name: auditor_address
+        type: string
+      - description: state 0：unProcess 1:processing 2:processed
+        in: query
+        name: state
+        type: integer
+      - description: type 1:withdraw 2:common
+        in: query
+        name: type
+        type: integer
+      - description: type 1:Gate 2:Weibo 3:Twitter 4:Reddit 5:Facebook
+        in: query
+        name: channel
+        type: integer
+      - description: page start from 0,default 0
+        in: query
+        name: page
+        type: integer
+      - description: size default 20
+        in: query
+        name: size
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/vo.Response'
+            - properties:
+                data:
+                  allOf:
+                  - $ref: '#/definitions/vo.Pagination'
+                  - properties:
+                      items:
+                        items:
+                          $ref: '#/definitions/vo.SocialShare'
+                        type: array
+                    type: object
+              type: object
+      summary: GetSocialShares
+      tags:
+      - share
+    post:
+      consumes:
+      - application/json
+      description: add social share
+      parameters:
+      - description: accessToken
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: addReq
+        in: body
+        name: .
+        schema:
+          $ref: '#/definitions/vo.AddSocialShareReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/vo.Response'
+            - properties:
+                data:
+                  type: string
+              type: object
+      summary: CreateSocialShare
+      tags:
+      - share
+  /share/my:
+    get:
+      consumes:
+      - application/json
+      description: get my social shares
+      parameters:
+      - description: accessToken
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: state 0：unProcess 1:processing 2:processed
+        in: query
+        name: state
+        type: integer
+      - description: type 1:withdraw 2:common
+        in: query
+        name: type
+        type: integer
+      - description: type 1:Gate 2:Weibo 3:Twitter 4:Reddit 5:Facebook
+        in: query
+        name: channel
+        type: integer
+      - description: begin time
+        in: query
+        name: beginTime
+        type: integer
+      - description: end time
+        in: query
+        name: endTime
+        type: integer
+      - description: page start from 0,default 0
+        in: query
+        name: page
+        type: integer
+      - description: size default 20
+        in: query
+        name: size
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/vo.Response'
+            - properties:
+                data:
+                  allOf:
+                  - $ref: '#/definitions/vo.Pagination'
+                  - properties:
+                      items:
+                        items:
+                          $ref: '#/definitions/vo.SocialShare'
+                        type: array
+                    type: object
+              type: object
+      summary: GetMySocialShares
+      tags:
+      - share
+  /share/process:
+    post:
+      consumes:
+      - application/json
+      description: process social share
+      parameters:
+      - description: accessToken
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: req
+        in: body
+        name: .
+        schema:
+          $ref: '#/definitions/vo.ProcessSocialShareReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/vo.Response'
+            - properties:
+                data:
+                  type: string
+              type: object
+      summary: SocialShareProcess
+      tags:
+      - share
+  /stats/daily:
+    get:
+      consumes:
+      - application/json
+      description: get daily stats
+      parameters:
+      - description: query day
+        in: query
+        name: day
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/vo.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/vo.DailyStats'
+              type: object
+      summary: GetDailyStats
+      tags:
+      - stats
+  /stats/daily/list:
+    get:
+      consumes:
+      - application/json
+      description: get daily stats list
+      parameters:
+      - description: page start from 0,default 0
+        in: query
+        name: page
+        type: integer
+      - description: size default 20
+        in: query
+        name: size
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/vo.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/vo.DailyStats'
+              type: object
+      summary: GetDailyStatsList
+      tags:
+      - stats
+  /stats/total:
+    get:
+      consumes:
+      - application/json
+      description: get total stats,will cache 1 minute
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/vo.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/vo.TotalStats'
+              type: object
+      summary: GetTotalStats
+      tags:
+      - stats
+  /stats/yield/hourly:
+    get:
+      consumes:
+      - application/json
+      description: get user yield hourly list
+      parameters:
+      - description: page start from 0,default 0
+        in: query
+        name: page
+        type: integer
+      - description: size default 20
+        in: query
+        name: size
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/vo.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/vo.UserYieldHourlyStats'
+              type: object
+      summary: GetDailyStatsList
+      tags:
+      - stats
+  /user/auth:
+    post:
+      consumes:
+      - application/json
+      description: user login and get accessToken
+      parameters:
+      - description: auth
+        in: body
+        name: .
+        schema:
+          $ref: '#/definitions/vo.UserAuthReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/vo.Response'
+            - properties:
+                data:
+                  type: string
+              type: object
+      summary: auth
+      tags:
+      - user
+  /user/profile:
+    get:
+      consumes:
+      - application/json
+      description: get user profile
+      parameters:
+      - description: accessToken
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/vo.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/vo.UserProfile'
+              type: object
+      summary: getUserProfile
+      tags:
+      - user
+    post:
+      consumes:
+      - application/json
+      description: modify user profile
+      parameters:
+      - description: accessToken
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: modifyReq
+        in: body
+        name: .
+        schema:
+          $ref: '#/definitions/vo.ModifyUserProfileReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/vo.Response'
+            - properties:
+                data:
+                  type: string
+              type: object
+      summary: modifyUserProfile
+      tags:
+      - user
+  /withdraw/histories:
+    get:
+      consumes:
+      - application/json
+      description: get  bonus withdraw ,can filter by address and type
+      parameters:
+      - description: filter address,if empty will return all user
+        in: query
+        name: address
+        type: string
+      - description: type 0：unProcess 1:processing 2:processed
+        in: query
+        name: type
+        type: integer
+      - description: page start from 0,default 0
+        in: query
+        name: page
+        type: integer
+      - description: size default 20
+        in: query
+        name: size
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/vo.Response'
+            - properties:
+                data:
+                  allOf:
+                  - $ref: '#/definitions/vo.Pagination'
+                  - properties:
+                      items:
+                        items:
+                          $ref: '#/definitions/vo.BonusWithdraw'
+                        type: array
+                    type: object
+              type: object
+      summary: GetWithdraws
+      tags:
+      - withdraw
+  /withdraw/my/history:
+    get:
+      consumes:
+      - application/json
+      description: get my bonus withdraw ,can filter by type
+      parameters:
+      - description: accessToken
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: type 0：unProcess 1:processing 2:processed
+        in: query
+        name: type
+        type: integer
+      - description: page start from 0,default 0
+        in: query
+        name: page
+        type: integer
+      - description: size default 20
+        in: query
+        name: size
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/vo.Response'
+            - properties:
+                data:
+                  allOf:
+                  - $ref: '#/definitions/vo.Pagination'
+                  - properties:
+                      items:
+                        items:
+                          $ref: '#/definitions/vo.BonusWithdraw'
+                        type: array
+                    type: object
+              type: object
+      summary: GetMyWithdraws
+      tags:
+      - withdraw
+  /withdraw/process:
+    post:
+      consumes:
+      - application/json
+      description: process withdraw bonus
+      parameters:
+      - description: accessToken
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: req
+        in: body
+        name: .
+        schema:
+          $ref: '#/definitions/vo.ProcessWithdrawBonusReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/vo.Response'
+            - properties:
+                data:
+                  type: string
+              type: object
+      summary: WithdrawBonusProcess
+      tags:
+      - withdraw
+  /withdraw/report_tx:
+    post:
+      consumes:
+      - application/json
+      description: report processed withdraw tx hash
+      parameters:
+      - description: accessToken
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: req
+        in: body
+        name: .
+        schema:
+          $ref: '#/definitions/vo.ProcessWithdrawBonusReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/vo.Response'
+            - properties:
+                data:
+                  type: string
+              type: object
+      summary: WithdrawReportHash
+      tags:
+      - withdraw
+swagger: "2.0"

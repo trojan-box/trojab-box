@@ -1,0 +1,66 @@
+Mode: debug                 # debug, release, test
+JwtSecret: JWT_SECRET
+JwtTimeout: 7200
+CSRF: true
+Debug: false
+ManagerAddress:
+  - 0x92561002B6BB157B7839E05953094cF47d8c7B61
+  - 0x9866c5dB69592ade1F1179D5110fDc7Be46F6f25
+
+HTTP:
+  Port: 5577
+  ReadTimeout: 3s
+  WriteTimeout: 3s
+
+Game:
+  MinBalance: 100000
+  StartHour: 12
+  EndHour: 24
+  SessionLayout: "2006010215"
+  MinWithdraw: 1000
+  MinBroadcastBonus: 100
+  VerifyWalletBalance: true
+  OnlyWhiteList: true
+  MaxWinSmallTimes: 10
+
+Ares:
+  ApiUrl: xxxxxxx
+  AresContractAddress: 0x358AA737e033F34df7c54306960a38d09AaBd523
+  AresContractDecimals: 18
+  GasStationUrl: xxxx
+
+Cron:
+  NewStar: "0 0 */1 * * *"
+  SeasonChampion: "0 0 0 * * *"
+  DailyStats: "0 0 1 * * *"
+  YesterdayDailyStats: "0 0 1 * * *"
+
+BonusPool:
+  BonusLevelAmounts:
+    - 3000
+    - 1000
+    - 800
+    - 500
+    - 300
+    - 200
+    - 100
+    - 50
+    - 5
+  WinBigBonusRatio: 10
+  AnnualizedFactor: 1.0
+  DefaultBonusPoolAmount: 500000
+  PlayGameAddAmount: 15
+  WithdrawReduceAmount: 1000
+
+Share:
+  CommonShareAllowChannel:
+    - 1
+    - 2
+    - 3
+    - 4
+  WithdrawShareBonus: 50
+
+Ipfs:
+  Url: "https://ipfs.infura.io:5001"
+  ProjectId: xxxxxxx
+  ProjectSecret: xxxxxxx

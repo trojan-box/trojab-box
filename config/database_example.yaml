@@ -1,0 +1,9 @@
+Name: trojan_box
+Addr: localhost:3306
+UserName: root
+Password: xxxxxx
+ShowLog: true
+MaxIdleConn: 10
+MaxOpenConn: 60
+ConnMaxLifeTime: 4h
+SlowThreshold: 500ms
